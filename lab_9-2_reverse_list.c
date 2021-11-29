@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+/*更好的寫法可以參考https://www.geeksforgeeks.org/reverse-a-linked-list/*/
 
 struct node{
     int data;
