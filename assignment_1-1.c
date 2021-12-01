@@ -192,6 +192,7 @@ int two_pairs(cards_t card[]){
 }
 
 int main(void){
+    /*看不懂的話可以問我，啊記得跟林庭伃說講話不要打那麼多笑哭臉表情符號*/
     cards_t *card = (cards_t*) malloc(5*sizeof(cards_t));
 
     for (int i = 0; i < 5; ++i) {
