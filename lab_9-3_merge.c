@@ -39,7 +39,7 @@ void merge(int a[], int size1, int size2){
             ++y;
         }
         if(x > size1-1 || y > size1+size2){
-            z = (x < size1- 1 )? x : y;
+            z = (x < size1 )? x : y;
             for(int j = i + 1; j < size1 +size2; ++j){
                 b[j] = a[z];
                 ++z;
