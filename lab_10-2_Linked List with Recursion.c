@@ -31,18 +31,15 @@ void output(node_t *ptr) {
 
 void add_node(linked_list_t *list_ptr, int data) {
     node_t *ptr = (node_t*) malloc(sizeof(node_t));
+    ptr -> data = data;
+    ptr -> next = NULL;
     if(list_ptr -> head == NULL) {
-        ptr -> data = data;
-        ptr -> next = NULL;
-        list_ptr -> tail = ptr;
-        list_ptr -> head = list_ptr -> tail;
+        list_ptr -> head = ptr;
     }
     else {
-        ptr -> data = data;
-        ptr -> next = NULL;
         list_ptr -> tail -> next = ptr;
-        list_ptr -> tail = list_ptr -> tail -> next; 
     }
+    list_ptr -> tail = ptr;
 }
 
 
@@ -59,7 +56,7 @@ void reverse_output(node_t *head, node_t *ptr) {
     if(ptr != NULL) {
         reverse_output(head, ptr -> next);
         printf("%d", ptr -> data);
-        if(ptr != head){ // 判斷是不是第一項，之浩output_reverse的最後一項輸出沒有空格但是output的輸出有= =
+        if(ptr != head){
             printf(" ");
         }
     }
