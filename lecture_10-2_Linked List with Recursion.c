@@ -55,11 +55,11 @@ void free_list(linked_list_t *ptr_list) {
     }
 }
 
-void reverse_output(linked_list_t *ptr_list, node_t *ptr) {
+void reverse_output(node_t *head, node_t *ptr) {
     if(ptr != NULL) {
-        reverse_output(ptr_list, ptr -> next);
+        reverse_output(head, ptr -> next);
         printf("%d", ptr -> data);
-        if(ptr != ptr_list -> head){
+        if(ptr != head){
             printf(" ");
         }
     }
@@ -80,7 +80,7 @@ int main(){
     }
     
     output(my_list.head);
-    reverse_output(&my_list, my_list.head);
+    reverse_output(my_list.head, my_list.head);
 
     free_list(&my_list);
     return 0;
