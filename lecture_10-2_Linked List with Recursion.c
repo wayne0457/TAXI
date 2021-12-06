@@ -59,7 +59,7 @@ void reverse_output(node_t *head, node_t *ptr) {
     if(ptr != NULL) {
         reverse_output(head, ptr -> next);
         printf("%d", ptr -> data);
-        if(ptr != head){
+        if(ptr != head){ // 判斷是不是第一項，之浩output_reverse的最後一項輸出沒有空格但是output的輸出有= =
             printf(" ");
         }
     }
