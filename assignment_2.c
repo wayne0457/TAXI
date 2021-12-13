@@ -13,20 +13,25 @@ typedef struct {
 void push(int* path, int top, int data){
     path[top] = data;
 }
+
 void track(int* path, int top){
     int i = 0;
     while (i < top) {
-        printf("(%d,%d)->", path[i]%4+1, path[i]/4+1);
+        printf("(%d,%d)->", path[i]%n+1, path[i]/n+1);
         i++;
     }
-    printf("(%d,%d)\n", path[i]%4+1, path[i]/4+1);
+    printf("(%d,%d)\n", path[i]%n+1, path[i]/n+1);
+}
+
+void pop(int **before, int* path, int top){
+    before[path[top]/n][path[top]%n] = 0;
 }
 
 void ramble(maze_t** maze, int i, int j, int** before, int* path, int top){
     if (i == n - 1  && j == m - 1) {
         if (maze[i][j].doors[1] == 0){
             ++route_num;
-            push(path, top, 4*i+j);
+            push(path, top, n*i+j);
             track(path,top);
         }
     } else if (i >= 0 && i < n && j >= 0 && j < m && before[i][j] == 0){
@@ -44,6 +49,7 @@ void ramble(maze_t** maze, int i, int j, int** before, int* path, int top){
         if (maze[i][j].doors[2] == 0){
             ramble(maze, i + 1, j, before, path, top+1);
         }
+        pop (before, path, top);
     }
 }
 
@@ -77,7 +83,7 @@ int main(){
         for (int j = 0; j < m; ++j) {
             if (i - 1 >= 0) {
                 if (maze[i][j].doors[0] != maze[i-1][j].doors[2]) {
-                    printf("input error\n");
+                     printf("input error\n");
                     return 0;
                 }
             }
