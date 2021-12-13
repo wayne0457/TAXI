@@ -31,20 +31,17 @@ void ramble(maze_t** maze, int i, int j, int** before, int* path, int top){
         }
     } else if (i >= 0 && i < n && j >= 0 && j < m && before[i][j] == 0){
         before[i][j] = 1;
-        if (maze[i][j].doors[0] == 0) {
-            push(path, top, 4*i+j);
-            ramble(maze, i - 1, j, before, path, top+1);
-        }
+        push(path, top, n*i+j);
         if (maze[i][j].doors[3] == 0){
-            push(path, top, 4*i+j);
             ramble(maze, i, j - 1, before, path, top+1);
         }
+        if (maze[i][j].doors[0] == 0) {
+            ramble(maze, i - 1, j, before, path, top+1);
+        }
         if (maze[i][j].doors[1] == 0){
-            push(path, top, 4*i+j);
             ramble(maze, i, j + 1, before, path, top+1);
         }
         if (maze[i][j].doors[2] == 0){
-            push(path, top, 4*i+j);
             ramble(maze, i + 1, j, before, path, top+1);
         }
     }
