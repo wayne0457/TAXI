@@ -1,5 +1,5 @@
 // contains main.cpp, fraction.cpp and fraction.h files
-
+//operator overloading using memeber function
 //main.cpp
 #include "fraction.h"
 #include <iostream>
