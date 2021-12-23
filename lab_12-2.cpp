@@ -1,3 +1,4 @@
+//operator overload using friend function
 // contains main.cpp fraction.cpp and fraction.h files
 
 // main.cpp
