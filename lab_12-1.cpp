@@ -1,4 +1,6 @@
 //contains main.cpp, fraction.cpp and fraction.h files
+//main.cpp
+
 #include "fraction.h"
 #include <iostream>
 using namespace std;
@@ -54,7 +56,6 @@ int gcd(int u, int v) {
    return v;
 }
 
-
 void Fraction::reduce(){ 
     int divisor = gcd(abs(numer),abs(denom));
     numer /= divisor;
@@ -73,6 +74,9 @@ void Fraction::input(){
 void Fraction::display(){
     cout << numer << '/' << denom;
 }
+
+// you may use Fraction Fraction:: in order to return the Fraction
+// you may use '&' instead of making the variables pointers
 
 void add(Fraction *num1, Fraction *num2){
     int temp = num1 -> denom;
