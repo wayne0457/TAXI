@@ -137,6 +137,7 @@ class Fraction {
 public:
   void input();
 	void display();     // display fraction
+        //Since operator can only be used between two object, we declare one variable and use the class itself as another variable since it's a member function
 	Fraction operator +(Fraction &frac2);
 	Fraction operator -(Fraction &frac2); 
 	Fraction operator *(Fraction &frac2);
