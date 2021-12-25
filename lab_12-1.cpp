@@ -75,7 +75,7 @@ void Fraction::display(){
     cout << numer << '/' << denom;
 }
 
-// you may use Fraction Fraction:: in order to return the Fraction
+// you may use Fraction Fraction:: instead of void in order to return the Fraction
 // you may use '&' instead of making the variables pointers
 
 void add(Fraction *num1, Fraction *num2){
