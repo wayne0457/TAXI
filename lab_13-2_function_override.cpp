@@ -64,6 +64,9 @@ private:
 #endif
 
 //student.cpp
+//You should remain your person::output() even if it doesn't have any actual functon because the student::output needs a reference
+//Also, do not call your person::output() in your student output
+
 #include "student.h"
 #include <iostream>
 #include <string>
