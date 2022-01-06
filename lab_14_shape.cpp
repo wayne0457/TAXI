@@ -6,11 +6,7 @@
 #include <iostream>
 using namespace std;
 
-double output(Rectangle &someshape){
-    return someshape.Area();   
-}
-
-double output(Circle &someshape){
+double output(Shape &someshape){
     return someshape.Area();   
 }
 
